@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blondie's Diner | Home-cooked breakfast &amp; brunch in Blackhall Colliery, Hartlepool</title>
+<meta name="description" content="Blondie's Diner on Middle Street, Blackhall Colliery. Big home-cooked breakfasts, jacket potatoes, rotisserie chicken, Sunday lunch, homemade cakes and proper coffee. Dine in, takeaway or delivery. Gluten-free options and kids welcome." />
+<meta property="og:title" content="Blondie's Diner — Blackhall Colliery" />
+<meta property="og:description" content="Big home-cooked breakfasts, homemade pies and proper coffee, beside The Hardwick in Blackhall Colliery." />
+<meta property="og:type" content="restaurant" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Kaushan+Script&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cream:#FBF2DE;
+    --butter:#F6E6C1;
+    --red:#B72A2A;
+    --red-dk:#8C1D1E;
+    --custard:#F4B60A;
+    --teal:#2E8B84;
+    --teal-soft:#8FCBC4;
+    --espresso:#2B1C13;
+    --slate:#20272A;
+    --chalk:#ECF2EA;
+    --shadow: 0 10px 30px rgba(43,28,19,.14);
+    --ring: 0 0 0 3px rgba(46,139,132,.45);
+    --maxw: 1160px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html,body{overflow-x:hidden;width:100%}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--espresso);
+    font-family:"DM Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{margin:0;line-height:1.02}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .anton{font-family:"Anton",Impact,sans-serif;font-weight:400;letter-spacing:.01em;text-transform:uppercase}
+  .script{font-family:"Kaushan Script",cursive;font-weight:400}
+  .eyebrow{
+    font-family:"Kaushan Script",cursive;
+    color:var(--red);
+    font-size:1.5rem;
+    display:inline-block;
+    transform:rotate(-3deg);
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:.5rem;
+    font-weight:700;letter-spacing:.02em;
+    padding:.85rem 1.4rem;border-radius:999px;border:2px solid transparent;
+    cursor:pointer;text-decoration:none;font-size:1rem;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn:focus-visible{outline:none;box-shadow:var(--ring)}
+  .btn-red{background:var(--red);color:#fff}
+  .btn-red:hover{background:var(--red-dk);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--espresso);border-color:var(--espresso)}
+  .btn-ghost:hover{background:var(--espresso);color:var(--cream);transform:translateY(-2px)}
+  .btn-cream{background:var(--cream);color:var(--red);border-color:var(--cream)}
+  .btn-cream:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,242,222,.92);
+    backdrop-filter:saturate(150%) blur(8px);
+    border-bottom:2px solid rgba(43,28,19,.10);
+  }
+  .bar{display:flex;align-items:center;justify-content:space-between;padding:10px 22px;max-width:var(--maxw);margin:0 auto;gap:1rem}
+  .brand{display:flex;flex-direction:column;line-height:.9;text-decoration:none}
+  .brand .b-script{font-family:"Kaushan Script",cursive;color:var(--red);font-size:1.7rem;margin-bottom:-2px}
+  .brand .b-sub{font-family:"Anton",sans-serif;text-transform:uppercase;letter-spacing:.28em;font-size:.62rem;color:var(--espresso)}
+  nav.main{display:flex;align-items:center;gap:1.4rem}
+  nav.main a.navlink{text-decoration:none;font-weight:500;font-size:.98rem;padding:.2rem 0;border-bottom:2px solid transparent}
+  nav.main a.navlink:hover{border-color:var(--red)}
+  .head-actions{display:flex;align-items:center;gap:.7rem}
+  .status-pill{
+    display:inline-flex;align-items:center;gap:.45rem;
+    font-size:.8rem;font-weight:700;padding:.35rem .7rem;border-radius:999px;
+    background:#fff;border:1px solid rgba(43,28,19,.12);white-space:nowrap;
+  }
+  .dot{width:9px;height:9px;border-radius:50%;background:#bbb;box-shadow:0 0 0 0 rgba(46,139,132,.5)}
+  .dot.open{background:var(--teal);animation:pulse 2.2s infinite}
+  .dot.closed{background:#c0392b}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(46,139,132,.5)}70%{box-shadow:0 0 0 8px rgba(46,139,132,0)}100%{box-shadow:0 0 0 0 rgba(46,139,132,0)}}
+  .hamburger{display:none;background:none;border:2px solid var(--espresso);border-radius:10px;padding:.4rem .55rem;cursor:pointer}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--espresso);margin:4px 0}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;overflow:hidden;padding:64px 0 0}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(1200px 500px at 78% -10%, rgba(244,182,10,.28), transparent 60%),
+      repeating-conic-gradient(from 0deg at 84% 6%, rgba(244,182,10,.10) 0deg 6deg, transparent 6deg 12deg);
+    pointer-events:none;
+  }
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding-bottom:34px}
+  .hero h1{font-size:clamp(3.1rem,8vw,6.2rem);color:var(--red);margin:.2rem 0 .1rem}
+  .hero h1 .line2{color:var(--espresso)}
+  .swoosh{height:16px;width:230px;max-width:70%;margin:2px 0 18px;
+    background:var(--custard);border-radius:999px;transform:rotate(-1.5deg)}
+  .lede{font-size:1.16rem;max-width:34ch;margin:0 0 22px;color:#4a3627}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:22px}
+  .chips{display:flex;flex-wrap:wrap;gap:.5rem}
+  .chip{background:#fff;border:1px solid rgba(43,28,19,.12);border-radius:999px;padding:.4rem .8rem;font-size:.85rem;font-weight:500;box-shadow:0 2px 0 rgba(43,28,19,.05)}
+  .chip b{color:var(--teal)}
+
+  /* hanging sign — the signature element */
+  .sign-mount{display:flex;justify-content:center;width:100%}
+  .sign-hang{position:relative;display:inline-block;padding-top:26px;max-width:100%}
+  .sign-hang::before,.sign-hang::after{
+    content:"";position:absolute;top:0;width:3px;height:30px;background:#6b4a2f;transform-origin:top;
+  }
+  .sign-hang::before{left:26%;transform:rotate(9deg)}
+  .sign-hang::after{right:26%;transform:rotate(-9deg)}
+  .sign{
+    position:relative;background:var(--red);color:var(--cream);
+    border:4px solid var(--cream);border-radius:14px;
+    box-shadow:var(--shadow), inset 0 0 0 2px var(--red-dk);
+    padding:22px 30px 18px;text-align:center;width:100%;max-width:320px;margin:0 auto;
+    animation:sway 5s ease-in-out infinite;transform-origin:top center;
+  }
+  @keyframes sway{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}
+  .sign.is-open{background:var(--teal)}
+  .sign .now{font-family:"Anton";font-size:3.2rem;letter-spacing:.02em;line-height:.9}
+  .sign .sub{font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.92;margin-top:6px}
+  .sign .today{margin-top:12px;font-size:.9rem;border-top:1px dashed rgba(251,242,222,.5);padding-top:10px}
+  .sign .loc{margin-top:14px;font-size:.9rem;background:var(--custard);color:var(--espresso);border-radius:8px;padding:6px 10px;font-weight:700}
+
+  .checker{height:26px;
+    background-image:linear-gradient(45deg,var(--espresso) 25%,transparent 25%),linear-gradient(-45deg,var(--espresso) 25%,transparent 25%),linear-gradient(45deg,transparent 75%,var(--espresso) 75%),linear-gradient(-45deg,transparent 75%,var(--espresso) 75%);
+    background-size:26px 26px;background-position:0 0,0 13px,13px -13px,-13px 0;
+    background-color:var(--custard);opacity:.9}
+
+  /* ---------- Section shells ---------- */
+  section{padding:74px 0}
+  section[id]{scroll-margin-top:72px}
+  .sec-head{max-width:640px;margin-bottom:34px}
+  .sec-head h2{font-size:clamp(2rem,5vw,3.1rem);margin:.15rem 0 .4rem}
+  .sec-head p{margin:0;color:#5a4535;font-size:1.08rem}
+
+  /* USP strip */
+  .strip{background:var(--espresso);color:var(--cream);padding:0}
+  .strip .wrap{display:flex;flex-wrap:wrap;gap:18px 34px;justify-content:space-between;padding-top:26px;padding-bottom:26px}
+  .usp{display:flex;align-items:center;gap:.6rem;font-weight:500}
+  .usp .ico{font-size:1.5rem;filter:saturate(1.2)}
+  .usp b{font-family:"Anton";font-weight:400;text-transform:uppercase;letter-spacing:.03em}
+
+  /* About */
+  .about{background:var(--cream)}
+  .about-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:44px;align-items:start}
+  .about p{margin:0 0 1rem;font-size:1.08rem}
+  .facts{background:var(--butter);border-radius:18px;padding:26px;box-shadow:var(--shadow);border:2px solid rgba(43,28,19,.06)}
+  .facts h3{font-family:"Anton";text-transform:uppercase;font-size:1.1rem;letter-spacing:.05em;margin-bottom:14px;color:var(--red)}
+  .facts ul{list-style:none;margin:0;padding:0}
+  .facts li{display:flex;gap:.6rem;padding:.5rem 0;border-bottom:1px dashed rgba(43,28,19,.18);font-size:.98rem}
+  .facts li:last-child{border-bottom:0}
+  .facts li span:first-child{font-size:1.15rem}
+
+  /* Menu */
+  .menu{background:var(--butter)}
+  .menu-note{background:#fff;border:1px dashed var(--red);color:var(--red-dk);border-radius:12px;padding:.7rem 1rem;font-size:.9rem;font-weight:500;margin-bottom:26px}
+  .tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:28px}
+  .tab{font-family:"Anton";text-transform:uppercase;letter-spacing:.04em;font-size:.98rem;
+    background:transparent;border:2px solid var(--espresso);color:var(--espresso);
+    padding:.5rem 1.05rem;border-radius:999px;cursor:pointer;transition:all .15s ease}
+  .tab:hover{background:rgba(43,28,19,.06)}
+  .tab[aria-selected="true"]{background:var(--red);border-color:var(--red);color:#fff}
+  .tab:focus-visible{outline:none;box-shadow:var(--ring)}
+  .panel{display:none}
+  .panel.active{display:block;animation:fade .3s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .menu-cols{columns:2;column-gap:44px}
+  .m-item{break-inside:avoid;padding:14px 0;border-bottom:1px dotted rgba(43,28,19,.28)}
+  .m-top{display:flex;align-items:baseline;gap:.5rem}
+  .m-name{font-weight:700;font-size:1.06rem;white-space:nowrap}
+  .m-lead{flex:1;border-bottom:2px dotted rgba(43,28,19,.28);transform:translateY(-4px)}
+  .m-price{font-family:"Anton";color:var(--red);font-size:1.05rem;letter-spacing:.02em}
+  .m-desc{color:#5a4535;font-size:.94rem;margin-top:.2rem}
+  .tag{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+    background:var(--teal-soft);color:#0d3b37;border-radius:6px;padding:.05rem .4rem;margin-left:.35rem;vertical-align:middle}
+  .tag.v{background:#cfe8c6;color:#22461a}
+
+  /* Specials chalkboard — signature */
+  .specials{background:var(--slate)}
+  .board{
+    background:
+      radial-gradient(1200px 400px at 20% -30%, rgba(255,255,255,.05), transparent 60%),
+      var(--slate);
+    border:14px solid #6b4a2f;border-radius:16px;
+    box-shadow:var(--shadow), inset 0 0 60px rgba(0,0,0,.5);
+    padding:40px 36px;color:var(--chalk);position:relative;
+  }
+  .board::after{content:"";position:absolute;inset:14px;border:1px solid rgba(236,242,234,.18);border-radius:6px;pointer-events:none}
+  .board .b-eyebrow{font-family:"Kaushan Script",cursive;color:var(--custard);font-size:1.7rem;display:block;margin-bottom:.2rem;transform:rotate(-2deg)}
+  .board h2{font-family:"Anton";text-transform:uppercase;font-size:clamp(1.9rem,5vw,2.8rem);color:#fff;margin-bottom:18px}
+  .board-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 40px}
+  .sp{border-bottom:1px dashed rgba(236,242,234,.3);padding:10px 0}
+  .sp b{color:#fff;font-size:1.12rem}
+  .sp .p{float:right;color:var(--custard);font-family:"Anton"}
+  .sp small{display:block;color:rgba(236,242,234,.72)}
+  .board .foot{margin-top:20px;font-size:.9rem;color:rgba(236,242,234,.72)}
+
+  /* Gallery */
+  .gallery{background:var(--cream)}
+  .g-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .polaroid{background:#fff;padding:12px 12px 40px;border-radius:6px;box-shadow:var(--shadow);position:relative;transition:transform .18s ease}
+  .polaroid:nth-child(odd){transform:rotate(-2deg)}
+  .polaroid:nth-child(even){transform:rotate(1.6deg)}
+  .polaroid:hover{transform:rotate(0) translateY(-4px)}
+  .polaroid{cursor:pointer}
+  .p-photo{aspect-ratio:1/1;border-radius:3px;width:100%}
+  div.p-photo{display:flex;align-items:center;justify-content:center;font-size:3rem;
+    background:linear-gradient(135deg,var(--butter),var(--teal-soft))}
+  img.p-photo{height:100%;object-fit:cover}
+  .polaroid:nth-child(4n+2) .p-photo{background:linear-gradient(135deg,#f7d9a8,#f0a6a6)}
+  .polaroid:nth-child(4n+3) .p-photo{background:linear-gradient(135deg,#cfe8c6,var(--custard))}
+  .polaroid:nth-child(4n) .p-photo{background:linear-gradient(135deg,var(--teal-soft),var(--butter))}
+  .p-cap{font-family:"Kaushan Script",cursive;text-align:center;margin-top:12px;color:#4a3627;font-size:1.15rem}
+  .g-hint{margin-top:20px;font-size:.9rem;color:#6a5442;text-align:center}
+
+  /* Lightbox — full HD photo viewer */
+  .lightbox{position:fixed;inset:0;z-index:100;background:rgba(20,14,9,.93);
+    display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+  .lightbox.show{display:flex}
+  .lightbox img{max-width:92vw;max-height:88vh;width:auto;height:auto;border-radius:8px;
+    box-shadow:0 24px 70px rgba(0,0,0,.65);border:6px solid #fff}
+  .lb-close{position:absolute;top:16px;right:22px;font-size:2.4rem;color:#fff;background:none;border:0;cursor:pointer;line-height:1}
+  .lb-close:focus-visible{outline:none;box-shadow:var(--ring);border-radius:8px}
+
+  /* Reviews */
+  .reviews{background:var(--red);color:var(--cream)}
+  .reviews .sec-head h2{color:#fff}
+  .reviews .sec-head p{color:rgba(251,242,222,.85)}
+  .r-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .rcard{background:rgba(251,242,222,.08);border:1px solid rgba(251,242,222,.25);border-radius:16px;padding:24px}
+  .stars{color:var(--custard);letter-spacing:.15em;margin-bottom:.6rem}
+  .rcard p{margin:0 0 1rem;font-size:1.02rem}
+  .rcard .who{font-weight:700;font-size:.92rem;opacity:.9}
+  .rreport{display:inline-flex;align-items:center;gap:.5rem;margin-top:28px;background:var(--custard);color:var(--espresso);font-weight:700;padding:.55rem 1.1rem;border-radius:999px;font-size:.86rem}
+
+  /* Visit */
+  .visit{background:var(--cream)}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+  .hours-card{background:#fff;border-radius:18px;box-shadow:var(--shadow);overflow:hidden;border:2px solid rgba(43,28,19,.06)}
+  .hours-card h3{background:var(--espresso);color:var(--cream);font-family:"Anton";text-transform:uppercase;letter-spacing:.05em;padding:16px 22px;font-size:1.1rem}
+  .hrow{display:flex;justify-content:space-between;padding:11px 22px;border-bottom:1px dashed rgba(43,28,19,.14);font-size:1rem}
+  .hrow:last-child{border-bottom:0}
+  .hrow.today{background:var(--butter);font-weight:700}
+  .hrow.today .day::after{content:" • today";color:var(--red);font-weight:700}
+  .contact-list{margin:22px 0 0;padding:0;list-style:none}
+  .contact-list li{display:flex;gap:.8rem;padding:.5rem 0;font-size:1.02rem}
+  .contact-list .ico{font-size:1.3rem}
+  .contact-list a{font-weight:700;color:var(--red);text-decoration:none}
+  .contact-list a:hover{text-decoration:underline}
+  .map{border-radius:18px;overflow:hidden;box-shadow:var(--shadow);border:2px solid rgba(43,28,19,.06);min-height:340px}
+  .map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+  .svc{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:16px}
+  .svc span{background:var(--teal);color:#fff;border-radius:999px;padding:.35rem .8rem;font-size:.82rem;font-weight:700}
+
+  /* Footer */
+  footer{background:var(--espresso);color:var(--cream);padding:52px 0 26px}
+  .f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
+  footer .b-script{font-family:"Kaushan Script",cursive;color:var(--custard);font-size:2rem}
+  footer p{color:rgba(251,242,222,.8);margin:.4rem 0}
+  footer h4{font-family:"Anton";text-transform:uppercase;letter-spacing:.06em;font-size:.95rem;margin:0 0 12px;color:var(--custard)}
+  footer a{color:var(--cream);text-decoration:none;display:block;padding:.25rem 0}
+  footer a:hover{color:var(--custard)}
+  .f-social{display:inline-flex;align-items:center;gap:.5rem;background:rgba(251,242,222,.1);border:1px solid rgba(251,242,222,.25);border-radius:999px;padding:.5rem 1rem;margin-top:8px;text-decoration:none}
+  .f-bottom{border-top:1px solid rgba(251,242,222,.15);margin-top:34px;padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.85rem;color:rgba(251,242,222,.65)}
+
+  /* Reveal animation */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease, transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    nav.main{position:fixed;inset:64px 0 auto 0;background:var(--cream);flex-direction:column;gap:0;
+      padding:10px 0;border-bottom:2px solid rgba(43,28,19,.12);box-shadow:var(--shadow);
+      transform:translateY(-140%);transition:transform .25s ease}
+    nav.main.show{transform:none}
+    nav.main a.navlink{padding:.8rem 22px;width:100%;border-bottom:1px solid rgba(43,28,19,.08)}
+    .hamburger{display:block}
+    .head-actions .btn{display:none}
+    .status-pill{display:none}
+    section{padding:52px 0}
+    .hero{padding-top:40px}
+    .hero-grid{grid-template-columns:1fr;gap:26px;text-align:center;padding-bottom:26px}
+    .hero .lede{margin-left:auto;margin-right:auto}
+    .hero-cta,.chips{justify-content:center}
+    .swoosh{margin-left:auto;margin-right:auto}
+    .about-grid,.visit-grid{grid-template-columns:1fr;gap:28px}
+    .r-grid{grid-template-columns:1fr}
+    .g-grid{grid-template-columns:repeat(2,1fr)}
+    .board{padding:30px 22px}
+    .board-grid{grid-template-columns:1fr}
+    .menu-cols{columns:1}
+    .m-name{white-space:normal}
+  }
+  @media (max-width:560px){
+    .g-grid{grid-template-columns:1fr}
+    .f-grid{grid-template-columns:1fr}
+    .sign .now{font-size:2.7rem}
+    .hero-cta .btn{width:100%;justify-content:center}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important}
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="brand" href="#top" aria-label="Blondie's Diner home">
+      <span class="b-script">Blondie's</span>
+      <span class="b-sub">Diner &middot; Blackhall</span>
+    </a>
+    <nav class="main" id="nav">
+      <a class="navlink" href="#menu">Menu</a>
+      <a class="navlink" href="#about">About</a>
+      <a class="navlink" href="#specials">Favourites</a>
+      <a class="navlink" href="#gallery">Gallery</a>
+      <a class="navlink" href="#visit">Find us</a>
+    </nav>
+    <div class="head-actions">
+      <span class="status-pill" id="statusPill"><span class="dot" id="statusDot"></span><span id="statusText">Checking hours…</span></span>
+      <a class="btn btn-red" href="tel:+447494960889">Call to order</a>
+      <button class="hamburger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="padding-bottom:0">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Welcome to</span>
+          <h1 class="anton">Blondie's<br><span class="line2">Diner</span></h1>
+          <div class="swoosh"></div>
+          <p class="lede">Big home-cooked breakfasts, proper coffee and homemade cakes — served with a smile beside The Hardwick in Blackhall Colliery.</p>
+          <div class="hero-cta">
+            <a class="btn btn-red" href="#menu">See the menu</a>
+            <a class="btn btn-ghost" href="tel:+447494960889">📞 07494 960889</a>
+          </div>
+          <div class="chips">
+            <span class="chip">🍳 <b>Breakfast &amp; brunch</b></span>
+            <span class="chip">🌱 Gluten-free options</span>
+            <span class="chip">👶 Kids welcome</span>
+            <span class="chip">🅿️ Free parking</span>
+          </div>
+        </div>
+        <div class="sign-mount">
+          <div class="sign-hang">
+            <div class="sign" id="doorSign">
+              <div class="now" id="signNow">OPEN</div>
+              <div class="sub" id="signSub">Come on in</div>
+              <div class="today" id="signToday">Today: 8:30am – 2:00pm</div>
+              <div class="loc">📍 Middle St, Blackhall Colliery</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="checker" aria-hidden="true"></div>
+  </section>
+
+  <!-- USP STRIP -->
+  <div class="strip">
+    <div class="wrap">
+      <div class="usp"><span class="ico">🍳</span> <b>Cooked fresh daily</b></div>
+      <div class="usp"><span class="ico">🐔</span> <b>In-shop rotisserie</b></div>
+      <div class="usp"><span class="ico">🥧</span> <b>Homemade pies</b></div>
+      <div class="usp"><span class="ico">🥡</span> <b>Dine in &middot; takeaway</b></div>
+      <div class="usp"><span class="ico">☕</span> <b>Proper coffee &amp; tea</b></div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="reveal">
+          <span class="eyebrow">Our little corner</span>
+          <h2 class="anton" style="font-size:clamp(2rem,5vw,3.1rem);margin:.2rem 0 1rem">A proper home-cooked welcome</h2>
+          <p>Blondie's Diner sits on the side of The Hardwick on Blackhall front street — a warm, friendly spot where the kettle's always on and the breakfasts are the kind that set you up for the day.</p>
+          <p>Everything is made in the shop, from hearty full breakfasts and jacket potatoes to our rotisserie chicken, homemade pies and a counter full of cakes. Whether you're calling in after a walk down to Blackhall Rocks, grabbing a takeaway on the way to work, or settling in for Sunday lunch with the family, there's a seat and a good feed waiting for you.</p>
+          <p>We look after every plate — including gluten-free, vegetarian and vegan needs — so just ask and we'll sort you out.</p>
+        </div>
+        <aside class="facts reveal">
+          <h3>Good to know</h3>
+          <ul>
+            <li><span>🕗</span><span>Open every day for breakfast &amp; lunch</span></li>
+            <li><span>🏠</span><span>Beside The Hardwick, Middle Street</span></li>
+            <li><span>♿</span><span>Step-free, wheelchair-friendly seating</span></li>
+            <li><span>🌱</span><span>Gluten-free, veggie &amp; vegan options</span></li>
+            <li><span>💳</span><span>Card &amp; contactless welcome</span></li>
+            <li><span>🪑</span><span>Indoor &amp; outdoor seating</span></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu" id="menu">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">What's cooking</span>
+        <h2 class="anton">The menu</h2>
+        <p>Home-cooked favourites, served all day until 2pm. Eat in or take away.</p>
+      </div>
+      <div class="tabs reveal" role="tablist" aria-label="Menu categories">
+        <button class="tab" role="tab" aria-selected="true" data-panel="p-breakfast">Breakfast</button>
+        <button class="tab" role="tab" aria-selected="false" data-panel="p-lunch">Lunch &amp; jackets</button>
+        <button class="tab" role="tab" aria-selected="false" data-panel="p-roast">Roasts &amp; rotisserie</button>
+        <button class="tab" role="tab" aria-selected="false" data-panel="p-sweet">Cakes &amp; sweets</button>
+        <button class="tab" role="tab" aria-selected="false" data-panel="p-drinks">Drinks</button>
+      </div>
+
+      <div class="panel active" id="p-breakfast" role="tabpanel">
+        <div class="menu-cols">
+          <div class="m-item"><div class="m-top"><span class="m-name">The Big Blondie</span><span class="m-lead"></span><span class="m-price">£9.50</span></div><div class="m-desc">Two of everything — bacon, sausage, eggs, beans, tomato, mushrooms, hash brown, black pudding &amp; toast.</div></div>
+          <div class="m-item"><div class="m-top"><span class="m-name">Small breakfast</span><span class="m-lead"></span><span class="m-price">£6.50</span></div><div class="m-desc">Bacon, sausage, egg, beans, toast — the perfect starter.</div></div>
+          <div class="m-item"><div class="m-top"><span class="m-name">Veggie breakfast <span class="tag v">V</span></span><span class="m-lead"></span><span class="m-price">£7.50</span></div><div class="m-desc">Veggie sausage, eggs, beans, tomato, mushrooms, hash brown &amp; toast.</div></div>
+          <div class="m-item"><div class="m-top"><span class="m-name">Breakfast bap</span><span class="m-lead"></span><span class="m-price">£3.50</span></div><div class="m-desc">Your choice of bacon, sausage or egg in a soft floured bap.</div></div>
+          <div class="m-item"><div class="m-top"><span class="m-name">Eggs on toast <span class="tag v">V</span></span><span class="m-lead"></span><span class="m-price">£4.50</span></div><div class="m-desc">Poached, fried or scrambled on thick buttered toast.</div></div>
+          <div class="m-item"><div class="m-top"><span class="m-name">Pancake stack <span class="tag v">V</span></span><span class="m-lead"></span><span class="m-price">£5.50</span></div><div class="m-desc">With berries &amp; syrup, or bacon &amp; maple.</div></div>
+        </div>
+      </div>
+
+      <div class="panel" id="p-lunch" role="tabpanel">
+        <div class="menu-cols">
+          <div class="m-item"><div class="m-top"><span class="m-name">Jacket potato</span><span class="m-lead"></span><span class="m-price">£5.50</span></div><div class="m-desc">Fluffy baked spud with salad and one filling — cheese, beans, tuna mayo or coleslaw.</div></div>
+          <div class="m-item"><div class="m-top"><span class="m-name">Homemade pie &amp; chips</span><span class="m-lead"></span><span class="m-price">£8.50</span></div><div class="m-desc">Made-in-shop pie with chips, peas and gravy.</div></div>
+          <div class="m-item"><div class="m-top"><span class="m-name">Sandwiches &amp; toasties</span><span class="m-lead"></span><span class="m-price">£4.50</span></div><div class="m-desc">On white or wholemeal with salad garnish — ask for today's fillings.</div></div>
+          <div class="m-item"><div class="m-top"><span class="m-name">Panini</span><span class="m-lead"></span><span class="m-price">£5.50</span></div><div class="m-desc">Toasted and served with salad and crisps.</div></div>
+          <div class="m-item"><div class="m-top"><span class="m-name">Soup of the day <span class="tag">GF option</span></span><span class="m-lead"></span><span class="m-price">£4.50</span></div><div class="m-desc">Homemade daily with a crusty roll and butter.</div></div>
+          <div class="m-item"><div class="m-top"><span class="m-name">Kids' lunch</span><span class="m-lead"></span><span class="m-price">£4.50</span></div><div class="m-desc">Little portion, drink and a treat.</div></div>
+        </div>
+      </div>
+
+      <div class="panel" id="p-roast" role="tabpanel">
+        <div class="menu-cols">
+          <div class="m-item"><div class="m-top"><span class="m-name">Sunday roast</span><span class="m-lead"></span><span class="m-price">£10.50</span></div><div class="m-desc">Roast of the day, Yorkshire pudding, seasonal veg and lashings of gravy. Sundays only.</div></div>
+          <div class="m-item"><div class="m-top"><span class="m-name">Rotisserie chicken (½)</span><span class="m-lead"></span><span class="m-price">£7.50</span></div><div class="m-desc">Cooked fresh in-shop, with chips or salad.</div></div>
+          <div class="m-item"><div class="m-top"><span class="m-name">Rotisserie chicken (whole)</span><span class="m-lead"></span><span class="m-price">£12.00</span></div><div class="m-desc">Perfect to take home for the family.</div></div>
+          <div class="m-item"><div class="m-top"><span class="m-name">Chicken dinner</span><span class="m-lead"></span><span class="m-price">£8.50</span></div><div class="m-desc">Rotisserie chicken with roast potatoes, veg and gravy.</div></div>
+        </div>
+      </div>
+
+      <div class="panel" id="p-sweet" role="tabpanel">
+        <div class="menu-cols">
+          <div class="m-item"><div class="m-top"><span class="m-name">Homemade cake <span class="tag v">V</span></span><span class="m-lead"></span><span class="m-price">£3.20</span></div><div class="m-desc">A rotating counter of fresh bakes — see what's on today.</div></div>
+          <div class="m-item"><div class="m-top"><span class="m-name">Scone with jam &amp; cream</span><span class="m-lead"></span><span class="m-price">£3.00</span></div><div class="m-desc">Baked in-house, best with a pot of tea.</div></div>
+          <div class="m-item"><div class="m-top"><span class="m-name">Traybakes &amp; slices</span><span class="m-lead"></span><span class="m-price">£2.50</span></div><div class="m-desc">Flapjacks, brownies and the like.</div></div>
+          <div class="m-item"><div class="m-top"><span class="m-name">Cake &amp; a brew</span><span class="m-lead"></span><span class="m-price">£4.50</span></div><div class="m-desc">Any slice with a tea or coffee — the little afternoon treat.</div></div>
+        </div>
+      </div>
+
+      <div class="panel" id="p-drinks" role="tabpanel">
+        <div class="menu-cols">
+          <div class="m-item"><div class="m-top"><span class="m-name">Rijo coffee</span><span class="m-lead"></span><span class="m-price">£2.60</span></div><div class="m-desc">Latte, cappuccino, americano, flat white or mocha.</div></div>
+          <div class="m-item"><div class="m-top"><span class="m-name">Pot of tea</span><span class="m-lead"></span><span class="m-price">£2.20</span></div><div class="m-desc">Traditional, plus a great selection of speciality teas.</div></div>
+          <div class="m-item"><div class="m-top"><span class="m-name">Hot chocolate</span><span class="m-lead"></span><span class="m-price">£2.90</span></div><div class="m-desc">With cream and marshmallows if you fancy.</div></div>
+          <div class="m-item"><div class="m-top"><span class="m-name">Cold drinks</span><span class="m-lead"></span><span class="m-price">£1.60</span></div><div class="m-desc">Cans, bottles and juices.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIALS CHALKBOARD -->
+  <section class="specials" id="specials">
+    <div class="wrap">
+      <div class="board reveal">
+        <span class="b-eyebrow">House favourites</span>
+        <h2>What we're known for</h2>
+        <div class="board-grid">
+          <div class="sp"><b>The Big Blondie breakfast</b><small>Our hearty full breakfast — the one people come back for</small></div>
+          <div class="sp"><b>In-shop rotisserie chicken</b><small>Roasted fresh every day</small></div>
+          <div class="sp"><b>Homemade pies</b><small>Baked in the shop, just like they should be</small></div>
+          <div class="sp"><b>Sunday roast</b><small>A proper roast with all the trimmings</small></div>
+          <div class="sp"><b>Fresh cakes &amp; traybakes</b><small>A counter full, changing daily</small></div>
+          <div class="sp"><b>Gluten-free &amp; veggie friendly</b><small>Just ask — we'll look after you</small></div>
+        </div>
+        <p class="foot">Weekly specials go up on the board in-shop — follow our Facebook to see what's on.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">A little taste</span>
+        <h2 class="anton">From the counter</h2>
+        <p>Real food, made in the shop, every single day.</p>
+      </div>
+      <div class="g-grid reveal">
+        <figure class="polaroid"><img class="p-photo" src="images/photo-01.jpg" alt="Full breakfast at Blondie's Diner" loading="lazy" data-emoji="🍳"><figcaption class="p-cap">Big breakfasts</figcaption></figure>
+        <figure class="polaroid"><img class="p-photo" src="images/photo-02.jpg" alt="Rotisserie chicken cooked in-shop" loading="lazy" data-emoji="🐔"><figcaption class="p-cap">Rotisserie chicken</figcaption></figure>
+        <figure class="polaroid"><img class="p-photo" src="images/photo-03.jpg" alt="Homemade pie" loading="lazy" data-emoji="🥧"><figcaption class="p-cap">Homemade pies</figcaption></figure>
+        <figure class="polaroid"><img class="p-photo" src="images/photo-04.jpg" alt="Fresh homemade cakes" loading="lazy" data-emoji="🍰"><figcaption class="p-cap">Fresh cakes</figcaption></figure>
+        <figure class="polaroid"><img class="p-photo" src="images/photo-05.jpg" alt="Loaded jacket potato" loading="lazy" data-emoji="🥔"><figcaption class="p-cap">Loaded jackets</figcaption></figure>
+        <figure class="polaroid"><img class="p-photo" src="images/photo-06.jpg" alt="Coffee at Blondie's Diner" loading="lazy" data-emoji="☕"><figcaption class="p-cap">Proper coffee</figcaption></figure>
+        <figure class="polaroid"><img class="p-photo" src="images/photo-07.jpg" alt="Sunday lunch" loading="lazy" data-emoji="🍽️"><figcaption class="p-cap">Sunday lunch</figcaption></figure>
+        <figure class="polaroid"><img class="p-photo" src="images/photo-08.jpg" alt="Pancake stack" loading="lazy" data-emoji="🥞"><figcaption class="p-cap">Pancake stacks</figcaption></figure>
+      </div>
+      <p class="g-hint">Fresh from the kitchen — follow us on Facebook to see what's new.</p>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow" style="color:var(--custard)">Kind words</span>
+        <h2 class="anton">Loved by the locals</h2>
+        <p>Rated 4.7 on Google and a favourite with the Blackhall crowd.</p>
+      </div>
+      <div class="r-grid">
+        <div class="rcard reveal">
+          <div class="stars">★★★★★</div>
+          <p>Proper home-cooked grub and a lovely takeaway breakfast — highly recommend if you're passing through.</p>
+          <div class="who">— Visitor, Google review</div>
+        </div>
+        <div class="rcard reveal">
+          <div class="stars">★★★★★</div>
+          <p>Staff went out of their way to check ingredients for my little boy who's gluten-free. Great value too.</p>
+          <div class="who">— Amy R., Google review</div>
+        </div>
+        <div class="rcard reveal">
+          <div class="stars">★★★★★</div>
+          <p>Lovely home-cooked food and friendly faces. What more can you ask for?</p>
+          <div class="who">— Regular, Google review</div>
+        </div>
+      </div>
+      <div style="text-align:center"><span class="rreport">💬 2,200+ friends over on Facebook</span></div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Come and see us</span>
+        <h2 class="anton">Find Blondie's</h2>
+        <p>On Middle Street, beside The Hardwick, Blackhall Colliery.</p>
+      </div>
+      <div class="visit-grid">
+        <div class="reveal">
+          <div class="hours-card">
+            <h3>Opening hours</h3>
+            <div class="hrow" data-day="1"><span class="day">Monday</span><span>8:30am – 2:00pm</span></div>
+            <div class="hrow" data-day="2"><span class="day">Tuesday</span><span>8:30am – 2:00pm</span></div>
+            <div class="hrow" data-day="3"><span class="day">Wednesday</span><span>8:30am – 2:00pm</span></div>
+            <div class="hrow" data-day="4"><span class="day">Thursday</span><span>8:30am – 2:00pm</span></div>
+            <div class="hrow" data-day="5"><span class="day">Friday</span><span>8:30am – 2:00pm</span></div>
+            <div class="hrow" data-day="6"><span class="day">Saturday</span><span>8:30am – 2:00pm</span></div>
+            <div class="hrow" data-day="0"><span class="day">Sunday</span><span>10:30am – 2:00pm</span></div>
+          </div>
+          <ul class="contact-list">
+            <li><span class="ico">📍</span><span>49A Middle St, Blackhall Colliery, Hartlepool TS27 4EA</span></li>
+            <li><span class="ico">📞</span><a href="tel:+447494960889">07494 960889</a></li>
+            <li><span class="ico">👍</span><a href="https://www.facebook.com/BlondiesDinerBlackhall/" target="_blank" rel="noopener">Message us on Facebook</a></li>
+          </ul>
+          <div class="svc">
+            <span>Dine in</span><span>Takeaway</span><span>Delivery</span><span>Outdoor seating</span>
+          </div>
+        </div>
+        <div class="map reveal">
+          <iframe title="Map to Blondie's Diner" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?q=Blondie%27s%20Diner%2C%2049A%20Middle%20St%2C%20Blackhall%20Colliery%2C%20Hartlepool%20TS27%204EA&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-close" id="lbClose" aria-label="Close photo">&times;</button>
+  <img id="lbImg" src="" alt="" />
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <span class="b-script">Blondie's Diner</span>
+        <p>Home-cooked breakfast, brunch &amp; lunch beside The Hardwick in Blackhall Colliery. Everyone's welcome.</p>
+        <a class="f-social" href="https://www.facebook.com/BlondiesDinerBlackhall/" target="_blank" rel="noopener">👍 Follow on Facebook</a>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <p>49A Middle St<br>Blackhall Colliery<br>Hartlepool TS27 4EA</p>
+        <a href="tel:+447494960889">📞 07494 960889</a>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="#menu">Menu</a>
+        <a href="#specials">House favourites</a>
+        <a href="#visit">Opening hours</a>
+        <a href="#about">About us</a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>&copy; <span id="yr"></span> Blondie's Diner, Blackhall Colliery.</span>
+      <span>Website by <b>Bindiya Siddhapura</b> · built for Blondie's</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  // Opening hours (24h): [openMin, closeMin] by JS day index (0=Sun)
+  var HOURS = {
+    0:[10*60+30, 14*60],  // Sun
+    1:[8*60+30, 14*60],
+    2:[8*60+30, 14*60],
+    3:[8*60+30, 14*60],
+    4:[8*60+30, 14*60],
+    5:[8*60+30, 14*60],
+    6:[8*60+30, 14*60]
+  };
+  function fmt(min){
+    var h=Math.floor(min/60), m=min%60;
+    var ap = h>=12 ? "pm":"am";
+    var h12 = h%12; if(h12===0) h12=12;
+    return h12 + (m? ":"+String(m).padStart(2,"0"):"") + ap;
+  }
+  function updateStatus(){
+    var now=new Date();
+    var day=now.getDay();
+    var mins=now.getHours()*60+now.getMinutes();
+    var rng=HOURS[day];
+    var isOpen = rng && mins>=rng[0] && mins<rng[1];
+    var dot=document.getElementById("statusDot");
+    var txt=document.getElementById("statusText");
+    var sign=document.getElementById("doorSign");
+    var now2=document.getElementById("signNow");
+    var sub=document.getElementById("signSub");
+    var today=document.getElementById("signToday");
+
+    today.textContent = "Today: " + fmt(rng[0]) + " – " + fmt(rng[1]);
+
+    if(isOpen){
+      dot.className="dot open"; txt.textContent="Open now";
+      sign.classList.add("is-open");
+      now2.textContent="OPEN"; sub.textContent="Come on in";
+    } else {
+      dot.className="dot closed";
+      sign.classList.remove("is-open");
+      now2.textContent="CLOSED"; sub.textContent="See you soon";
+      // find next opening
+      var found=false;
+      for(var i=0;i<7 && !found;i++){
+        var d=(day+i)%7, r=HOURS[d];
+        if(!r) continue;
+        if(i===0 && mins<r[0]){ txt.textContent="Opens "+fmt(r[0]); found=true; }
+        else if(i===1){ txt.textContent="Opens tomorrow "+fmt(r[0]); found=true; }
+        else if(i>1){ var days=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]; txt.textContent="Opens "+days[d]+" "+fmt(r[0]); found=true; }
+      }
+      if(!found) txt.textContent="Closed";
+    }
+    // highlight today's row
+    document.querySelectorAll(".hrow").forEach(function(row){
+      row.classList.toggle("today", Number(row.getAttribute("data-day"))===day);
+    });
+  }
+  updateStatus();
+  setInterval(updateStatus, 60000);
+
+  // Menu tabs
+  document.querySelectorAll(".tab").forEach(function(tab){
+    tab.addEventListener("click", function(){
+      document.querySelectorAll(".tab").forEach(function(t){t.setAttribute("aria-selected","false")});
+      document.querySelectorAll(".panel").forEach(function(p){p.classList.remove("active")});
+      tab.setAttribute("aria-selected","true");
+      document.getElementById(tab.getAttribute("data-panel")).classList.add("active");
+    });
+  });
+
+  // Mobile nav
+  var burger=document.getElementById("burger"), nav=document.getElementById("nav");
+  burger.addEventListener("click", function(){
+    var open=nav.classList.toggle("show");
+    burger.setAttribute("aria-expanded", open?"true":"false");
+  });
+  nav.querySelectorAll("a").forEach(function(a){
+    a.addEventListener("click", function(){ nav.classList.remove("show"); burger.setAttribute("aria-expanded","false"); });
+  });
+
+  // Gallery: graceful placeholder if a photo file isn't there yet
+  document.querySelectorAll("img.p-photo").forEach(function(img){
+    img.addEventListener("error", function(){
+      var d=document.createElement("div");
+      d.className="p-photo";
+      d.textContent=img.getAttribute("data-emoji")||"🍽️";
+      img.replaceWith(d);
+    });
+  });
+
+  // Lightbox — click a photo to view full size
+  var lb=document.getElementById("lightbox"), lbImg=document.getElementById("lbImg");
+  document.querySelectorAll(".polaroid").forEach(function(fig){
+    fig.addEventListener("click", function(){
+      var img=fig.querySelector("img.p-photo");
+      if(!img || !img.getAttribute("src")) return;   // ignore placeholders
+      lbImg.src=img.src; lbImg.alt=img.alt||"";
+      lb.classList.add("show");
+    });
+  });
+  if(lb){
+    lb.addEventListener("click", function(){ lb.classList.remove("show"); lbImg.src=""; });
+    document.addEventListener("keydown", function(e){ if(e.key==="Escape"){ lb.classList.remove("show"); lbImg.src=""; } });
+  }
+
+  // Reveal on scroll
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+  },{threshold:.12});
+  document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+
+  // Year
+  document.getElementById("yr").textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
